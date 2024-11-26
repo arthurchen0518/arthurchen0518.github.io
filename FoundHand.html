@@ -3,7 +3,7 @@
     
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Wide-Baseline Relative Camera Pose Estimation with Directional Learning</title>
+    <title>FoundHand: Large-Scale Domain-Specific Learning for Controllable Hand Image Generation</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,12 +14,12 @@
   <!-- <link rel="icon" type="image/png" href=""> -->
     <!-- Place favicon.ico in the root directory -->
 
-    <link rel="stylesheet" href="./DirectionNet/bootstrap.min.css">
-    <link rel="stylesheet" href="./DirectionNet/font-awesome.min.css">
-    <link rel="stylesheet" href="./DirectionNet/codemirror.min.css">
-    <link rel="stylesheet" href="./DirectionNet/app.css">
+    <link rel="stylesheet" href="./FoundHand/bootstrap.min.css">
+    <link rel="stylesheet" href="./FoundHand/font-awesome.min.css">
+    <link rel="stylesheet" href="./FoundHand/codemirror.min.css">
+    <link rel="stylesheet" href="./FoundHand/app.css">
 
-    <link rel="stylesheet" href="./DirectionNet/bootstrap.min(1).css">
+    <link rel="stylesheet" href="./FoundHand/bootstrap.min(1).css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0ZMW34H4P"></script>
@@ -31,21 +31,21 @@
       gtag('config', 'G-E0ZMW34H4P');
     </script>
     
-    <script src="./DirectionNet/jquery.min.js"></script>
-    <script src="./DirectionNet/bootstrap.min.js"></script>
-    <script src="./DirectionNet/codemirror.min.js"></script>
-    <script src="./DirectionNet/clipboard.min.js"></script>
+    <script src="./FoundHand/jquery.min.js"></script>
+    <script src="./FoundHand/bootstrap.min.js"></script>
+    <script src="./FoundHand/codemirror.min.js"></script>
+    <script src="./FoundHand/clipboard.min.js"></script>
 
-    <script src="./DirectionNet/app.js"></script>
+    <script src="./FoundHand/app.js"></script>
 </head>
 
 <body>
     <div class="container" id="main">
         <div class="row">
             <h1 class="col-md-12 text-center">
-                Wide-Baseline Relative Camera Pose Estimation with Directional Learning<br>
+                FoundHand: Large-Scale Domain-Specific Learning for Controllable Hand Image Generation<br>
                 <small>
-                    CVPR 2021
+<!--                     CVPR 2021 -->
                 </small>
             </h1>
         </div>
@@ -54,21 +54,42 @@
                 <ul class="list-inline">
                     <li>
                         <a href="https://arthurchen0518.github.io/">
-                          Kefan Chen
+                          Kefan Chen*<sup>1</sup>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.cs.cornell.edu/~snavely/">
-                          Noah Snavely
+                        <a href="https://chaerinmin.github.io/">
+                          Chaerin Min*<sup>1</sup>
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.ameeshmakadia.com/index.html">
-                          Ameesh Makadia
+                        <a href="https://lg-zhang.github.io/">
+                          Linguang Zhang<sup>2</sup>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://shreyashampali.github.io/">
+                          Shreyas Hampali<sup>2</sup>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.co.uk/citations?user=9HoiYnYAAAAJ&hl=en">
+                          Cem Keskin<sup>2</sup>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://cs.brown.edu/people/ssrinath/">
+                          Srinath Sridhar<sup>1</sup>
                         </a>
                     </li>
                 </ul>
-                Google Research <br>
+                <div style="margin-top: 10px;">
+                    <span style="font-size: 0.8em;">* Equal contribution</span>
+                </div>
+                <div style="margin-top: 5px;">
+                    <span style="font-size: 0.8em;"><sup>1</sup>Brown University</span><br>
+                    <span style="font-size: 0.8em;"><sup>2</sup>Meta Reality Lab</span>
+                </div>
             </div>
         </div>
 
@@ -78,20 +99,20 @@
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <ul class="nav nav-pills nav-justified">
                         <li>
-                            <a href="https://arxiv.org/abs/2106.03336">
-                            <img src="./DirectionNet/paper.PNG" height="120px"><br>
+                            <a href="">
+                            <img src="./FoundHand/paper.PNG" height="120px"><br>
                                 <h4><strong>Paper</strong></h4>
                             </a>
                         </li>
                         <li>
-                            <a href="https://youtu.be/tJ2JTFmi0oI">
-                            <img src="./DirectionNet/youtube_icon_dark.png" height="120px"><br>
+                            <a href="">
+                            <img src="./FoundHand/youtube_icon_dark.png" height="120px"><br>
                                 <h4><strong>Technical Video </strong></h4>
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/arthurchen0518/DirectionNet">
-                            <img src="./DirectionNet/github_pad.png" height="120px"><br>
+                            <a href="">
+                            <img src="./FoundHand/github_pad.png" height="120px"><br>
                                 <h4><strong>Code</strong></h4>
                             </a>
                         </li>
@@ -115,13 +136,13 @@
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <img src="./DirectionNet/TrainingPipeline.png" class="img-responsive" alt="overview"><br>
+                <img src="./FoundHand/foundhand.png" class="img-responsive" alt="overview"><br>
                 <h3>
                     Abstract
                 </h3>
                 
                 <p class="text-justify">
-            Modern deep learning techniques that regress the relative camera pose between two images have difficulty dealing with challenging scenarios, such as large camera motions resulting in occlusions and significant changes in perspective that leave little overlap between images. These models continue to struggle even with the benefit of large supervised training datasets. To address the limitations of these models, we take inspiration from techniques that show regressing keypoint locations in 2D and 3D can be improved by estimating a discrete distribution over keypoint locations. Analogously, in this paper we explore improving camera pose regression by instead predicting a discrete distribution over camera poses. To realize this idea, we introduce DirectionNet, which estimates discrete distributions over the 5D relative pose space using a novel parameterization to make the estimation problem tractable. Specifically, DirectionNet factorizes relative camera pose, specified by a 3D rotation and a translation direction, into a set of 3D direction vectors. Since 3D directions can be identified with points on the sphere, DirectionNet estimates discrete distributions on the sphere as its output. We evaluate our model on challenging synthetic and real pose estimation datasets constructed from Matterport3D and InteriorNet. Promising results show a near 50% reduction in error over direct regression methods.
+                Despite remarkable progress in image generation models, generating realistic hands remains a persistent challenge due to their complex articulation, varying viewpoints, and frequent occlusions. We present FoundHand, a large-scale domain-specific diffusion model for synthesizing single and dual hand images. To train our model, we introduce FoundHand-10M, a large-scale hand dataset with 2D keypoints and segmentation mask annotations. Our insight is to use 2D hand keypoints as a universal representation that encodes both hand articulation and camera viewpoint. FoundHand learns from image pairs to capture physically plausible hand articulations, natively enables precise control through 2D keypoints, and supports appearance control. Our model exhibits core capabilities that include the ability to repose hands, transfer hand appearance, and even synthesize novel views. This leads to zero-shot capabilities for fixing malformed hands in previously generated images, or synthesizing hand video sequences. We present extensive experiments and evaluations that demonstrate state-of-the-art performance of our method.
                 </p>
             </div>
         </div>
@@ -139,7 +160,7 @@
                 </div>
             </div>
         </div> -->
-
+<!-- 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
@@ -158,7 +179,7 @@
                     </textarea>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
         <div class="row">
